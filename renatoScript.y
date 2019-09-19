@@ -29,6 +29,7 @@ void yyerror (char *s){
 %token SENAO
 %token ENQUANTO
 %token ESCREVER
+%token LER
 %token <fn> CMP
 %right RAIZ
 %right '='
@@ -54,6 +55,7 @@ stmt: SE '(' exp ')' '{' list '}' %prec IFX {$$ = newflow('I', $3, $6, NULL);}
 	| ENQUANTO '(' exp ')' '{' list '}' {$$ = newflow('W', $3, $6, NULL);}
 	| VAR '=' exp {insertList(list, $1); $$ = newasgn($1,$3);}
 	| ESCREVER '(' exp ')' { $$ = newast('P',$3,NULL);}
+	| LER '(' VAR ')' { $$ = newLer($3);}
 	;
 
 list:	  stmt{$$ = $1;}

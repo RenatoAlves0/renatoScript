@@ -178,6 +178,8 @@ double eval(Ast *a) {
 		
 		case 'P': 	v = eval(a->l);
 					printf ("%.2f\n",v); break; 
+
+		case 'Q': scanf("%lf", &(buscaEstr(list, ((Varval *)a)->var)->valor)); break;
 		
 		default: printf("internal error: bad node %c\n", a->nodetype);
 				
@@ -200,5 +202,21 @@ Ast * newasgn(char s[], Ast *v) {
 	a->nodetype = '=';
     strcpy (a->s, s); 
 	a->v = v; 
+	return (Ast *)a;
+}
+
+Ast * newLer(char s[]) {
+	Symasgn *a = (Symasgn*)malloc(sizeof(Symasgn));
+	if(!a) {
+		printf("out of space");
+	exit(0);
+	}
+	if(buscaEstr(list, s) == NULL){
+		list = insertList(list, s);
+	}
+
+	Estr *aux = buscaEstr(list, s);
+	a->nodetype = 'Q';
+    strcpy (a->s, s); 
 	return (Ast *)a;
 }

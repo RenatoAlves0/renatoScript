@@ -4,26 +4,30 @@ a = 5
 b = 10
 c = 15
 d = 20
-	se(a > b){
-		se(a > c){
-			escrever(a)
-		}senao{
-			escrever(c)
-		}
-	}senao{
-		se(b > c){
-			escrever(b)
-		}
-		senao{
-			c = 2^a
-			escrever(c)
-		}
-	}
-	
-	enquanto(a < b){
-		a = a + 1
-		escrever(a)
-	}		
-			
-FIM
 
+ler(o)
+escrever(o)
+
+se (a > b) {
+	se (a > c) {
+		escrever(a)
+	} senao {
+		escrever(c)
+	}
+} senao {
+	se (b > c) {
+		escrever(b)
+	}
+	senao {
+		c = 2^a
+		escrever(c)
+	}
+}
+
+enquanto(a < b){
+	a = a + 1
+	escrever(a)
+	escrever(a@a)
+}
+
+FIM

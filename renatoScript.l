@@ -27,6 +27,7 @@ RAIZ "@"
 {SENAO} {return SENAO;}
 {ENQUANTO} {return ENQUANTO;}
 {ESCREVER} {return ESCREVER;}
+{LER} {return LER;}
 {RAIZ} {return RAIZ;}
 {NUM} {
 	yylval.flo = atof(yytext);
