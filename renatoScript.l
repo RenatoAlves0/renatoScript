@@ -6,9 +6,9 @@ SE "se"
 SENAO "senao"
 ENQUANTO "enquanto"
 ESCREVER "escrever"
-LER ("ler")
-INICIO ("INICIO")
-FIM ("FIM")
+LER "ler"
+INICIO "INICIO"
+FIM "FIM"
 TIPO ("int"|"double"|"float")
 INT [0-9]+
 VAR [A-Za-z]+[0-9A-Za-z]*
@@ -27,17 +27,15 @@ RAIZ "@"
 {SENAO} {return SENAO;}
 {ENQUANTO} {return ENQUANTO;}
 {ESCREVER} {return ESCREVER;}
-{VAR} {
-	strcpy(yylval.str, yytext);
-	return VAR;
-	}
+{RAIZ} {return RAIZ;}
 {NUM} {
 	yylval.flo = atof(yytext);
 	return NUM;
 	}
-{RAIZ} {
-    return RAIZ;
-}
+{VAR} {
+	strcpy(yylval.str, yytext);
+	return VAR;
+	}
 
 [-+()=/*^{};] { return *yytext; }
 

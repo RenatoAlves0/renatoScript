@@ -363,10 +363,10 @@ struct yy_trans_info
 static const flex_int16_t yy_accept[54] =
     {   0,
        17,   17,   20,   18,   17,   17,   10,    8,   12,   10,
-       11,    9,    7,    7,    7,    7,    7,   17,    8,    8,
-       16,   13,   14,   15,    7,    7,    7,    7,    7,    7,
-        3,    8,    7,    7,    2,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    4,    7,    7,    1,    7,    7,
+       11,    7,    9,    9,    9,    9,    9,   17,    8,    8,
+       16,   13,   14,   15,    9,    9,    9,    9,    9,    9,
+        3,    8,    9,    9,    2,    9,    9,    9,    9,    9,
+        9,    9,    9,    9,    4,    9,    9,    1,    9,    9,
         5,    6,    0
     } ;
 
@@ -806,14 +806,11 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 30 "renatoScript.l"
-{
-	strcpy(yylval.str, yytext);
-	return VAR;
-	}
+{return RAIZ;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 34 "renatoScript.l"
+#line 31 "renatoScript.l"
 {
 	yylval.flo = atof(yytext);
 	return NUM;
@@ -821,63 +818,64 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 38 "renatoScript.l"
+#line 35 "renatoScript.l"
 {
-    return RAIZ;
-}
+	strcpy(yylval.str, yytext);
+	return VAR;
+	}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 42 "renatoScript.l"
+#line 40 "renatoScript.l"
 { return *yytext; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 44 "renatoScript.l"
+#line 42 "renatoScript.l"
 {yylval.fn = 1; return CMP; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 45 "renatoScript.l"
+#line 43 "renatoScript.l"
 {yylval.fn = 2; return CMP; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 46 "renatoScript.l"
+#line 44 "renatoScript.l"
 {yylval.fn = 3; return CMP; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 47 "renatoScript.l"
+#line 45 "renatoScript.l"
 {yylval.fn = 4; return CMP; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 48 "renatoScript.l"
+#line 46 "renatoScript.l"
 {yylval.fn = 5; return CMP; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 49 "renatoScript.l"
+#line 47 "renatoScript.l"
 {yylval.fn = 6; return CMP; }
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 51 "renatoScript.l"
+#line 49 "renatoScript.l"
 {;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 53 "renatoScript.l"
+#line 51 "renatoScript.l"
 {}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 54 "renatoScript.l"
+#line 52 "renatoScript.l"
 ECHO;
 	YY_BREAK
-#line 881 "lex.yy.c"
+#line 879 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1882,5 +1880,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 54 "renatoScript.l"
+#line 52 "renatoScript.l"
 

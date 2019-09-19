@@ -108,8 +108,6 @@ Ast * newcmp(int cmptype, Ast *l, Ast *r){
 	return a;
 }
 
-
-
 Ast * newValorVal(char s[]) { 
 	Varval *a = (Varval*) malloc(sizeof(Varval));
 	if(!a) {
