@@ -68,7 +68,7 @@ exp:
 	|exp '*' exp {$$ = newast('*',$1,$3);}
 	|exp '/' exp {$$ = newast('/',$1,$3);}
 	|exp '^' exp {$$ = newast('^',$1,$3);}
-	|exp RAIZ exp {$$ = newast('@', $1,$3);}
+	|RAIZ exp {$$ = newast('@',$2,NULL);}
 	|exp CMP exp {$$ = newcmp($2,$1,$3);}		
 	|'(' exp ')' {$$ = $2;}
 	|'-' exp %prec NEG {$$ = newast('M',$2,NULL);}

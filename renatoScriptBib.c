@@ -133,7 +133,7 @@ double eval(Ast *a) {
 		case '-': v = eval(a->l) - eval(a->r); break;	
 		case '*': v = eval(a->l) * eval(a->r); break;	
 		case '/': v = eval(a->l) / eval(a->r); break; 
-		case '@': v = pow(eval(a->r), 1/eval(a->l)); break;
+		case '@': v = sqrt(eval(a->l)); break;
 		case '^': v = pow(eval(a->l), eval(a->r)); break;
 		case 'M': v = -eval(a->l); break;		
 				

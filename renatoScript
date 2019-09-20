@@ -1,33 +1,28 @@
 INICIO
 
-a = 5
-b = 10
-c = 15
-d = 20
 
-ler(o)
-escrever(o)
+ler (a)
+ler (b)
 
-se (a > b) {
-	se (a > c) {
-		escrever(a)
-	} senao {
-		escrever(c)
-	}
+aa = (((a*2) + (b*3))/5)
+
+se(aa >= 7) {
+	escrever (7)
 } senao {
-	se (b > c) {
-		escrever(b)
-	}
-	senao {
-		c = 2^a
-		escrever(c)
+	se(aa < 3) {
+		escrever (3)
+	} senao {
+		escrever (0)
+		ler (c)
+		xxx = (c+aa)/2
+		enquanto (xxx <= 5) {
+			escrever ((c+aa)/2)
+			ler (c)
+		}
+		escrever (xxx)
 	}
 }
 
-enquanto(a < b){
-	a = a + 1
-	escrever(a)
-	escrever(a@a)
-}
+
 
 FIM
